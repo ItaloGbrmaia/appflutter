@@ -3,9 +3,10 @@ import 'package:app/app/modules/factories/quote_interface.dart';
 import 'package:app/app/modules/factories/video_interface.dart';
 import 'package:app/app/modules/models/article_models.dart';
 import 'package:app/app/modules/models/video_models.dart';
-import 'package:app/modules/home/models/Quote_models.dart';
+
 import 'package:mobx/mobx.dart';
 import 'package:connectivity/connectivity.dart';
+import 'package:app/app/modules/models/quote_models.dart';
 
 part 'home_controller.g.dart';
 

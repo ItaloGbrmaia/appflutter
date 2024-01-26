@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'package:app/app/modules/factories/quote_interface.dart';
-import 'package:app/modules/home/models/Quote_models.dart';
+import 'package:app/app/modules/models/quote_models.dart';
+
 import 'package:app/shared/data/http/http_client.dart';
 
 class RemoteLoadQuote implements QuoteLoad {
