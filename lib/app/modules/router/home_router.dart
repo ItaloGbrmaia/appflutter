@@ -35,11 +35,6 @@ class HomeRouter extends Module {
             loadQuote: i(),
           ),
         ),
-        // Bind.singleton(
-        //   (i) => ArticleController(
-        //     loadArticle: i(),
-        //   ),
-        // ),
       ];
 
   @override
