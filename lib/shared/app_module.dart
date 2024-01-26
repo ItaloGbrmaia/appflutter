@@ -1,3 +1,4 @@
+import 'package:app/app/modules/router/home_router.dart';
 import 'package:app/shared/app_routes.dart';
 import 'package:app/shared/data/cache/local_storage_adapter.dart';
 import 'package:app/shared/data/contracts/cache/cache_storage.dart';
@@ -5,8 +6,6 @@ import 'package:app/shared/data/factories/http_client_factory.dart';
 import 'package:app/shared/data/usecases/local/local_remove_current_account.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:localstorage/localstorage.dart';
-
-import '../modules/home/router/home_router.dart';
 
 class AppModule extends Module {
   @override
@@ -38,5 +37,9 @@ class AppModule extends Module {
           AppRoutes.home,
           module: HomeRouter(),
         ),
+        // ModuleRoute(
+        //   AppRoutes.article,
+        //   module: ArticleRouter(),
+        // ),
       ];
 }
