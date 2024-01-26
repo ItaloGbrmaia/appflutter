@@ -2,7 +2,7 @@ import 'package:app/app/modules/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import '../../../app/modules/components/cards_quotes.dart';
+import '../modules/widgets/cards_quotes.dart';
 
 class QuoteView extends StatefulWidget {
   QuoteView({

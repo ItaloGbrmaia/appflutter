@@ -1,4 +1,4 @@
-import 'package:app/shared/components/theme/app_theme.dart';
+import 'package:app/shared/global/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';

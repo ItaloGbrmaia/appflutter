@@ -1,7 +1,7 @@
 import 'package:app/app/modules/controller/article_controller.dart';
 import 'package:app/app/modules/controller/home_controller.dart';
 import 'package:app/app/modules/models/article_models.dart';
-import 'package:app/app/modules/components/cards_articles.dart';
+import 'package:app/app/modules/widgets/cards_articles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
