@@ -26,20 +26,10 @@ class AppModule extends Module {
       ];
 
   @override
-  List<Module> get imports => [
-        // UsecasesModule(),
-        // ServicesModule(),
-      ];
-
-  @override
   List<ModularRoute> get routes => [
         ModuleRoute(
           AppRoutes.home,
           module: HomeRouter(),
         ),
-        // ModuleRoute(
-        //   AppRoutes.article,
-        //   module: ArticleRouter(),
-        // ),
       ];
 }
