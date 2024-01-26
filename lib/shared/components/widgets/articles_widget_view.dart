@@ -5,8 +5,6 @@ import 'package:app/app/modules/view/componets/cards_articles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:share_plus/share_plus.dart';
 // ignore: unused_import
 import 'package:url_launcher/url_launcher.dart';
 

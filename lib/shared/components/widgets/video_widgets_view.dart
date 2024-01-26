@@ -1,12 +1,9 @@
 import 'package:app/app/modules/controller/home_controller.dart';
 import 'package:app/app/modules/models/video_models.dart';
 import 'package:app/app/modules/view/componets/cards_videos.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:share_plus/share_plus.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class VideoView extends StatefulWidget {
   VideoView({
