@@ -20,7 +20,7 @@ class ArticleCardView extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () => {
-            Modular.to.popAndPushNamed("/home/article"),
+            Modular.to.pushNamed("/home/article"),
             article.id = e.id,
           },
           child: Column(
