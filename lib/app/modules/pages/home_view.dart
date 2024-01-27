@@ -1,7 +1,7 @@
 import 'package:app/app/modules/controller/home_controller.dart';
-import 'package:app/app/components/articles_widget_view.dart';
-import 'package:app/app/components/quote_widget_view.dart';
-import 'package:app/app/components/video_widgets_view.dart';
+import 'package:app/app/modules/components/articles_widget_view.dart';
+import 'package:app/app/modules/components/quote_widget_view.dart';
+import 'package:app/app/modules/components/video_widgets_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {

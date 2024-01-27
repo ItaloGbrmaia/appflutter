@@ -1,6 +1,6 @@
 import 'package:app/app/modules/controller/home_controller.dart';
 import 'package:app/app/modules/models/video_models.dart';
-import 'package:app/app/modules/widgets/cards_videos.dart';
+import 'package:app/app/modules/cards/cards_videos.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -32,6 +32,9 @@ class _VideoViewState extends State<VideoView> {
               scrollController.position.maxScrollExtent &&
           !widget.controller.isLoading) {
         widget.controller.loadVideo();
+        double currentPosition = scrollController.position.pixels;
+
+        scrollController.jumpTo(currentPosition);
       }
     });
     widget.controller.loadVideo();
@@ -44,11 +47,7 @@ class _VideoViewState extends State<VideoView> {
   }
 
   Future<void> _onRefresh() async {
-    double currentPosition = scrollController.position.pixels;
-
-    await widget.controller.loadVideo();
-
-    scrollController.jumpTo(currentPosition);
+    widget.controller.loadVideo();
   }
 
   @override

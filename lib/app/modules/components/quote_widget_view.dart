@@ -1,37 +1,32 @@
-import 'package:app/app/modules/controller/article_controller.dart';
 import 'package:app/app/modules/controller/home_controller.dart';
-import 'package:app/app/modules/models/article_models.dart';
-import 'package:app/app/modules/widgets/cards_articles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-// ignore: unused_import
-import 'package:url_launcher/url_launcher.dart';
+import '../cards/cards_quotes.dart';
 
-class ArticleView extends StatefulWidget {
-  ArticleView({
+class QuoteView extends StatefulWidget {
+  QuoteView({
     super.key,
   });
   final controller = Modular.get<HomeController>();
-  final article = Modular.get<ArticleController>();
 
   @override
-  State<ArticleView> createState() => _ArticleViewState();
+  State<QuoteView> createState() => _QuoteViewState();
 }
 
-class _ArticleViewState extends State<ArticleView> {
+class _QuoteViewState extends State<QuoteView> {
   @override
   void initState() {
     super.initState();
-    widget.controller.allArticle = [];
-    widget.controller.homeArticle = [];
-    widget.controller.homearticleList = [];
-    widget.controller.pageArticles = 1;
-    widget.controller.loadArticle();
+    widget.controller.allQuote = [];
+    widget.controller.homeQuote = [];
+    widget.controller.homeQuoteList = [];
+    widget.controller.pageQuote = 1;
+    widget.controller.loadQuote();
   }
 
   Future<void> _onrefresh() async {
-    widget.controller.loadArticle();
+    widget.controller.loadQuote();
   }
 
   @override
@@ -48,21 +43,13 @@ class _ArticleViewState extends State<ArticleView> {
                         physics: const AlwaysScrollableScrollPhysics(),
                         scrollDirection: Axis.vertical,
                         child: Column(
-                          children: [
-                            ...widget.controller.homearticleList!
-                                .asMap()
-                                .entries
-                                .map(
-                              (entry) {
-                                ArticleModel e = entry.value;
-
-                                return ArticleCardView(
-                                  e: e,
-                                  article: widget.article,
-                                );
-                              },
-                            ).toList(),
-                          ],
+                          children: widget.controller.homeQuoteList!.map(
+                            (e) {
+                              return QuoteCardView(
+                                e: e,
+                              );
+                            },
+                          ).toList(),
                         ),
                       )
                     : Center(
