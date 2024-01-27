@@ -12,17 +12,15 @@ class RemoteLoadArticleId implements ArticleLoadId {
   final HttpClient httpClient;
 
   @override
-  Future<List<ArticleModelID>> loadArticle(int id) async {
+  Future<ArticleModelID> loadArticle(int id) async {
     try {
       final responseData = await httpClient.request(
-        url: '${url}$id',
+        url: '$url$id',
         method: 'get',
       );
 
-      List<dynamic> dataList = responseData['list'];
-      List<ArticleModelID> receivedList =
-          dataList.map((item) => ArticleModelID.fromJson(item)).toList();
-      return receivedList;
+      return ArticleModelID.fromJson(
+          responseData); // Ajustado para um único objeto
     } catch (e) {
       rethrow;
     }

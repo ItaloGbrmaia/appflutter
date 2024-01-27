@@ -4,7 +4,7 @@ import 'package:app/app/modules/factories/articles_get_factories.dart';
 import 'package:app/app/modules/factories/articles_id_get_factories.dart';
 import 'package:app/app/modules/factories/quote_get_factories.dart';
 import 'package:app/app/modules/factories/video_get_factories.dart';
-import 'package:app/app/modules/pages/article_view.dart';
+import 'package:app/app/modules/pages/article_detalis_view.dart';
 import 'package:app/app/modules/pages/home_view.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

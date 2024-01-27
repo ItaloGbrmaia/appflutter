@@ -36,13 +36,10 @@ abstract class ArticleControllerBase with Store {
   bool hatTime = true;
 
   List<ArticleModelID>? allArticle;
-  List<ArticleModelID>? homeArticle;
-  List<ArticleModelID>? homearticleList;
+
   Future<void> loadArticle() async {
     isLoading = true;
     allArticle ??= [];
-    homeArticle ??= [];
-    homearticleList ??= [];
 
     try {
       isLoading = true;
@@ -51,35 +48,16 @@ abstract class ArticleControllerBase with Store {
         isLoading = false;
         internet = false;
         allArticle = [];
-        homeArticle = [];
-        homearticleList = [];
-        print("Sem conexão");
+
         return;
       }
 
-      dynamic result = await _loadArticle.loadArticle(id).timeout(
-        const Duration(seconds: 7),
-        onTimeout: () {
-          print("Tempo limite excedido (7 segundos)");
-          isLoading = false;
-          hatTime = false;
-          allArticle = [];
-          homeArticle = [];
-          homearticleList = [];
-          return [];
-        },
-      );
+      final result = await _loadArticle.loadArticle(id);
 
-      if (result != null &&
-          result is List<ArticleModelID> &&
-          result.isNotEmpty) {
+      if (result != null) {
         internet = true;
-        hatTime = true;
-        allArticle = result;
-        homeArticle = List.from(allArticle!); // Cria uma cópia da lista
-        homearticleList!.addAll(homeArticle!);
-      } else {
-        hatTime = false;
+
+        allArticle = [result];
       }
 
       isLoading = false;
