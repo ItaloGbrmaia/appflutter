@@ -1,5 +1,5 @@
-import 'package:app/app/modules/factories/articles_interface.dart';
-import 'package:app/app/modules/models/article_models.dart';
+import 'package:app/app/factories/articles_interface.dart';
+import 'package:app/app/models/article_models.dart';
 import 'package:app/shared/data/http/http_client.dart';
 
 class RemoteLoadArticle implements ArticleLoad {

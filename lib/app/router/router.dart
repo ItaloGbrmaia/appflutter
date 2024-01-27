@@ -1,11 +1,11 @@
-import 'package:app/app/modules/controller/article_controller.dart';
-import 'package:app/app/modules/controller/home_controller.dart';
-import 'package:app/app/modules/factories/articles_get_factories.dart';
-import 'package:app/app/modules/factories/articles_id_get_factories.dart';
-import 'package:app/app/modules/factories/quote_get_factories.dart';
-import 'package:app/app/modules/factories/video_get_factories.dart';
-import 'package:app/app/modules/pages/article_detalis_view.dart';
-import 'package:app/app/modules/pages/home_view.dart';
+import 'package:app/app/controller/article_controller.dart';
+import 'package:app/app/controller/home_controller.dart';
+import 'package:app/app/factories/articles_get_factories.dart';
+import 'package:app/app/factories/articles_id_get_factories.dart';
+import 'package:app/app/factories/quote_get_factories.dart';
+import 'package:app/app/factories/video_get_factories.dart';
+import 'package:app/app/pages/article_detalis_view.dart';
+import 'package:app/app/pages/home_view.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class HomeRouter extends Module {

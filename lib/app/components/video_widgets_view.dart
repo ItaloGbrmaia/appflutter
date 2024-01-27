@@ -1,6 +1,6 @@
-import 'package:app/app/modules/controller/home_controller.dart';
-import 'package:app/app/modules/models/video_models.dart';
-import 'package:app/app/modules/cards/cards_videos.dart';
+import 'package:app/app/controller/home_controller.dart';
+import 'package:app/app/models/video_models.dart';
+import 'package:app/app/cards/cards_videos.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';

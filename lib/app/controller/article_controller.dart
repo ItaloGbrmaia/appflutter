@@ -1,5 +1,5 @@
-import 'package:app/app/modules/factories/articles_id_interface.dart';
-import 'package:app/app/modules/models/article_id_models.dart';
+import 'package:app/app/factories/articles_id_interface.dart';
+import 'package:app/app/models/article_id_models.dart';
 import 'package:mobx/mobx.dart';
 import 'package:connectivity/connectivity.dart';
 

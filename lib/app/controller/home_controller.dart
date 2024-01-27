@@ -1,12 +1,12 @@
-import 'package:app/app/modules/factories/articles_interface.dart';
-import 'package:app/app/modules/factories/quote_interface.dart';
-import 'package:app/app/modules/factories/video_interface.dart';
-import 'package:app/app/modules/models/article_models.dart';
-import 'package:app/app/modules/models/video_models.dart';
+import 'package:app/app/factories/articles_interface.dart';
+import 'package:app/app/factories/quote_interface.dart';
+import 'package:app/app/factories/video_interface.dart';
+import 'package:app/app/models/article_models.dart';
+import 'package:app/app/models/video_models.dart';
 
 import 'package:mobx/mobx.dart';
 import 'package:connectivity/connectivity.dart';
-import 'package:app/app/modules/models/quote_models.dart';
+import 'package:app/app/models/quote_models.dart';
 
 part 'home_controller.g.dart';
 

@@ -1,4 +1,4 @@
-import 'package:app/app/modules/router/router.dart';
+import 'package:app/app/router/router.dart';
 import 'package:app/shared/app_routes.dart';
 import 'package:app/shared/data/cache/local_storage_adapter.dart';
 import 'package:app/shared/data/contracts/cache/cache_storage.dart';

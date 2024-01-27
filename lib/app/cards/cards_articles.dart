@@ -1,5 +1,5 @@
-import 'package:app/app/modules/controller/article_controller.dart';
-import 'package:app/app/modules/models/article_models.dart';
+import 'package:app/app/controller/article_controller.dart';
+import 'package:app/app/models/article_models.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';

@@ -1,5 +1,5 @@
-import 'package:app/app/modules/factories/video_interface.dart';
-import 'package:app/app/modules/models/video_models.dart';
+import 'package:app/app/factories/video_interface.dart';
+import 'package:app/app/models/video_models.dart';
 import 'package:app/shared/data/http/http_client.dart';
 
 class RemoteLoadVideo implements VideoLoad {

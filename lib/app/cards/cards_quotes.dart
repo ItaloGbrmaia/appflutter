@@ -1,4 +1,4 @@
-import 'package:app/app/modules/models/quote_models.dart';
+import 'package:app/app/models/quote_models.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
