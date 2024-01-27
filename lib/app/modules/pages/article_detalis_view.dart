@@ -118,6 +118,9 @@ class _ArticleViewState extends State<ArticleView> {
                                       ),
                                     ),
                                   ),
+                                  const SizedBox(
+                                    height: 30,
+                                  ),
                                 ],
                               ),
                             )
