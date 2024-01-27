@@ -108,6 +108,7 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
         ),
+        backgroundColor: const Color(0xffE09090),
         body: TabBarView(
           children: <Widget>[
             VideoView(),

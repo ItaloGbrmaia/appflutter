@@ -36,92 +36,101 @@ class _ArticleViewState extends State<ArticleView> {
 
   @override
   Widget build(BuildContext context) {
-    return Observer(
-      builder: (context) {
-        return widget.controller.isLoading == false
-            ? RefreshIndicator(
-                onRefresh: _onrefresh,
-                color: const Color(0xffE09090),
-                child: widget.controller.internet != false &&
-                        widget.controller.hatTime != false
-                    ? SingleChildScrollView(
-                        physics: const AlwaysScrollableScrollPhysics(),
-                        scrollDirection: Axis.vertical,
-                        child: Column(
-                          children: [
-                            ...widget.controller.homearticleList!
-                                .asMap()
-                                .entries
-                                .map(
-                              (entry) {
-                                ArticleModel e = entry.value;
+    return Container(
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(25),
+          topLeft: Radius.circular(25),
+        ),
+      ),
+      child: Observer(
+        builder: (context) {
+          return widget.controller.isLoading == false
+              ? RefreshIndicator(
+                  onRefresh: _onrefresh,
+                  color: const Color(0xffE09090),
+                  child: widget.controller.internet != false &&
+                          widget.controller.hatTime != false
+                      ? SingleChildScrollView(
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          scrollDirection: Axis.vertical,
+                          child: Column(
+                            children: [
+                              ...widget.controller.homearticleList!
+                                  .asMap()
+                                  .entries
+                                  .map(
+                                (entry) {
+                                  ArticleModel e = entry.value;
 
-                                return ArticleCardView(
-                                  e: e,
-                                  article: widget.article,
-                                );
-                              },
-                            ).toList(),
-                          ],
-                        ),
-                      )
-                    : Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              "Ops!",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600,
-                                color: Color(0xff80848F),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 14,
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.only(left: 28.0, right: 28),
-                              child: Text(
-                                "Não foi possível conectar ao servidor, verifique se está conectado à internet.",
+                                  return ArticleCardView(
+                                    e: e,
+                                    article: widget.article,
+                                  );
+                                },
+                              ).toList(),
+                            ],
+                          ),
+                        )
+                      : Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                "Ops!",
                                 style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w400,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
                                   color: Color(0xff80848F),
                                 ),
-                                textAlign: TextAlign.center,
                               ),
-                            ),
-                            const SizedBox(
-                              height: 18,
-                            ),
-                            ElevatedButton(
-                              onPressed: _onrefresh,
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color(
-                                  0xffECECEC,
-                                ), // Light gray background color
+                              const SizedBox(
+                                height: 14,
                               ),
-                              child: const Text(
-                                "Recarregar",
-                                style: TextStyle(
-                                  fontSize: 14.5,
-                                  color: Color(
-                                    0xff80848F,
-                                  ), // Red text color
+                              const Padding(
+                                padding: EdgeInsets.only(left: 28.0, right: 28),
+                                child: Text(
+                                  "Não foi possível conectar ao servidor, verifique se está conectado à internet.",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xff80848F),
+                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
                               ),
-                            ),
-                          ],
+                              const SizedBox(
+                                height: 18,
+                              ),
+                              ElevatedButton(
+                                onPressed: _onrefresh,
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(
+                                    0xffECECEC,
+                                  ), // Light gray background color
+                                ),
+                                child: const Text(
+                                  "Recarregar",
+                                  style: TextStyle(
+                                    fontSize: 14.5,
+                                    color: Color(
+                                      0xff80848F,
+                                    ), // Red text color
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-              )
-            : const Center(
-                child: CircularProgressIndicator(
-                  color: Color(0xffE09090),
-                ),
-              );
-      },
+                )
+              : const Center(
+                  child: CircularProgressIndicator(
+                    color: Color(0xffE09090),
+                  ),
+                );
+        },
+      ),
     );
   }
 }
