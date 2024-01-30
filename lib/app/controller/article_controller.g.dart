@@ -44,54 +44,6 @@ mixin _$ArticleController on ArticleControllerBase, Store {
     });
   }
 
-  late final _$pagevideosAtom =
-      Atom(name: 'ArticleControllerBase.pagevideos', context: context);
-
-  @override
-  int get pagevideos {
-    _$pagevideosAtom.reportRead();
-    return super.pagevideos;
-  }
-
-  @override
-  set pagevideos(int value) {
-    _$pagevideosAtom.reportWrite(value, super.pagevideos, () {
-      super.pagevideos = value;
-    });
-  }
-
-  late final _$pageArticlesAtom =
-      Atom(name: 'ArticleControllerBase.pageArticles', context: context);
-
-  @override
-  int get pageArticles {
-    _$pageArticlesAtom.reportRead();
-    return super.pageArticles;
-  }
-
-  @override
-  set pageArticles(int value) {
-    _$pageArticlesAtom.reportWrite(value, super.pageArticles, () {
-      super.pageArticles = value;
-    });
-  }
-
-  late final _$pageQuoteAtom =
-      Atom(name: 'ArticleControllerBase.pageQuote', context: context);
-
-  @override
-  int get pageQuote {
-    _$pageQuoteAtom.reportRead();
-    return super.pageQuote;
-  }
-
-  @override
-  set pageQuote(int value) {
-    _$pageQuoteAtom.reportWrite(value, super.pageQuote, () {
-      super.pageQuote = value;
-    });
-  }
-
   late final _$internetAtom =
       Atom(name: 'ArticleControllerBase.internet', context: context);
 
@@ -129,9 +81,6 @@ mixin _$ArticleController on ArticleControllerBase, Store {
     return '''
 id: ${id},
 isLoading: ${isLoading},
-pagevideos: ${pagevideos},
-pageArticles: ${pageArticles},
-pageQuote: ${pageQuote},
 internet: ${internet},
 hatTime: ${hatTime}
     ''';

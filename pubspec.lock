@@ -233,6 +233,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.7.4"
+  chopper:
+    dependency: transitive
+    description:
+      name: chopper
+      sha256: d1457197abb29ee354889fda35a7ac2e752eb5a687562148afb1faa78a61e36d
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.1.1"
+  chucker_flutter:
+    dependency: "direct main"
+    description:
+      name: chucker_flutter
+      sha256: e90a1537c40c6c15c1a52eb53e214d1c9dd5e6b59a115b8d91fe111d21619fbb
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.6.3"
   clock:
     dependency: transitive
     description:
@@ -669,6 +685,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  http_mock_adapter:
+    dependency: transitive
+    description:
+      name: http_mock_adapter
+      sha256: "46399c78bd4a0af071978edd8c502d7aeeed73b5fb9860bca86b5ed647a63c1b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.1"
   http_multi_server:
     dependency: transitive
     description:
@@ -765,6 +789,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.1+4"
+  logger:
+    dependency: transitive
+    description:
+      name: logger
+      sha256: "6bbb9d6f7056729537a4309bda2e74e18e5d9f14302489cc1e93f33b3fe32cac"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.2+1"
   logging:
     dependency: transitive
     description:
@@ -829,6 +861,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.6.0+1"
+  mockito:
+    dependency: "direct main"
+    description:
+      name: mockito
+      sha256: "6841eed20a7befac0ce07df8116c8b8233ed1f4486a7647c7fc5a02ae6163917"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.4.4"
   modular_core:
     dependency: transitive
     description:

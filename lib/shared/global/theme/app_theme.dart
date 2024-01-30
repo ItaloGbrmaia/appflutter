@@ -23,46 +23,6 @@ ThemeData buildThemeData() {
   );
 }
 
-// MaterialColor _buildPrimarySwatch() {
-//   const defaultPrimary = Color.fromARGB(255, 255, 255, 255);
-
-//   return MaterialColor(
-//     defaultPrimary.value,
-//     const {
-//       50: Color(0xFFFFFFFF),
-//       100: Color(0xFFFFFFFF),
-//       200: Color(0xFFFFFFFF),
-//       300: Color(0xFFFFFFFF),
-//       400: Color(0xFFFFFFFF),
-//       500: defaultPrimary,
-//       600: Color(0xFFFFFFFF),
-//       700: Color(0xFFFFFFFF),
-//       800: Color(0xFFFFFFFF),
-//       900: Color(0xFFFFFFFF),
-//     },
-//   );
-// }
-
-// MaterialColor _buildSecondarySwatch() {
-//   const defaultSecondary = Color(0xFFAE841A);
-
-//   return MaterialColor(
-//     defaultSecondary.value,
-//     const {
-//       50: Color(0xFFEAFAE6),
-//       100: Color(0xFFCAF1C0),
-//       200: Color(0xFFA4E796),
-//       300: Color(0xFF79DD68),
-//       400: Color(0xFF51D541),
-//       500: defaultSecondary,
-//       600: Color(0xFF00BD00),
-//       700: Color(0xFF00A800),
-//       800: Color(0xFF009400),
-//       900: Color(0xFF007100),
-//     },
-//   );
-// }
-
 TextTheme _buildTextTheme(String fontFamily, {required Color textColor}) {
   return TextTheme(
     displayLarge: TextStyle(

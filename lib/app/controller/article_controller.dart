@@ -21,15 +21,6 @@ abstract class ArticleControllerBase with Store {
   bool isLoading = true;
 
   @observable
-  int pagevideos = 1;
-
-  @observable
-  int pageArticles = 1;
-
-  @observable
-  int pageQuote = 1;
-
-  @observable
   bool internet = true;
 
   @observable

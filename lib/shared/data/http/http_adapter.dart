@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:app/shared/data/http/http_client.dart';
 import 'package:app/shared/data/http/http_error.dart';
 import 'package:dio/dio.dart';
+import 'package:chucker_flutter/chucker_flutter.dart';
 
 class HttpAdapter implements HttpClient {
   final Dio dio;
@@ -24,7 +25,7 @@ class HttpAdapter implements HttpClient {
         'content-type': 'application/json',
         'Authorization': 'Bearer $token',
       });
-
+    Dio().interceptors.add(ChuckerDioInterceptor());
     late Response<dynamic> response;
     final jsonBody = body != null ? jsonEncode(body) : null;
     final uri = Uri.parse(url);
