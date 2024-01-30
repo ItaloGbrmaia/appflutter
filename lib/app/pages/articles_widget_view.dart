@@ -20,6 +20,7 @@ class ArticleView extends StatefulWidget {
 }
 
 class _ArticleViewState extends State<ArticleView> {
+  late ScrollController scrollController;
   @override
   void initState() {
     super.initState();
@@ -28,6 +29,23 @@ class _ArticleViewState extends State<ArticleView> {
     widget.controller.homearticleList = [];
     widget.controller.pageArticles = 1;
     widget.controller.loadArticle();
+    scrollController = ScrollController();
+    scrollController.addListener(() {
+      if (scrollController.position.pixels ==
+              scrollController.position.maxScrollExtent &&
+          !widget.controller.isLoading) {
+        widget.controller.loadArticle();
+        double currentPosition = scrollController.position.pixels;
+
+        scrollController.jumpTo(currentPosition);
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    scrollController.dispose();
   }
 
   Future<void> _onrefresh() async {
@@ -52,27 +70,42 @@ class _ArticleViewState extends State<ArticleView> {
                   color: const Color(0xffE09090),
                   child: widget.controller.internet != false &&
                           widget.controller.hatTime != false
-                      ? SingleChildScrollView(
+                      ? ListView.builder(
+                          controller: scrollController,
                           physics: const AlwaysScrollableScrollPhysics(),
-                          scrollDirection: Axis.vertical,
-                          child: Column(
-                            children: [
-                              ...widget.controller.homearticleList!
-                                  .asMap()
-                                  .entries
-                                  .map(
-                                (entry) {
-                                  ArticleModel e = entry.value;
+                          itemCount: widget.controller.homearticleList!.length,
+                          itemBuilder: (context, index) {
+                            ArticleModel e =
+                                widget.controller.homearticleList![index];
 
-                                  return ArticleCardView(
-                                    e: e,
-                                    article: widget.article,
-                                  );
-                                },
-                              ).toList(),
-                            ],
-                          ),
+                            return ArticleCardView(
+                              e: e,
+                              article: widget.article,
+                            );
+                          },
                         )
+
+                      //  SingleChildScrollView(
+                      //     physics: const AlwaysScrollableScrollPhysics(),
+                      //     scrollDirection: Axis.vertical,
+                      //     child: Column(
+                      //       children: [
+                      //         ...widget.controller.homearticleList!
+                      //             .asMap()
+                      //             .entries
+                      //             .map(
+                      //           (entry) {
+                      //             ArticleModel e = entry.value;
+
+                      //             return ArticleCardView(
+                      //               e: e,
+                      //               article: widget.article,
+                      //             );
+                      //           },
+                      //         ).toList(),
+                      //       ],
+                      //     ),
+                      //   )
                       : Center(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

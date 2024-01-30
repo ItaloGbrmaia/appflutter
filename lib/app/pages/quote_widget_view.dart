@@ -1,4 +1,5 @@
 import 'package:app/app/controller/home_controller.dart';
+import 'package:app/app/models/quote_models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -15,6 +16,7 @@ class QuoteView extends StatefulWidget {
 }
 
 class _QuoteViewState extends State<QuoteView> {
+  late ScrollController scrollController;
   @override
   void initState() {
     super.initState();
@@ -23,6 +25,17 @@ class _QuoteViewState extends State<QuoteView> {
     widget.controller.homeQuoteList = [];
     widget.controller.pageQuote = 1;
     widget.controller.loadQuote();
+    scrollController = ScrollController();
+    scrollController.addListener(() {
+      if (scrollController.position.pixels ==
+              scrollController.position.maxScrollExtent &&
+          !widget.controller.isLoading) {
+        widget.controller.loadQuote();
+        double currentPosition = scrollController.position.pixels;
+
+        scrollController.jumpTo(currentPosition);
+      }
+    });
   }
 
   Future<void> _onrefresh() async {
@@ -47,18 +60,18 @@ class _QuoteViewState extends State<QuoteView> {
                   color: const Color(0xffE09090),
                   child: widget.controller.internet != false &&
                           widget.controller.hatTime != false
-                      ? SingleChildScrollView(
+                      ? ListView.builder(
+                          controller: scrollController,
                           physics: const AlwaysScrollableScrollPhysics(),
-                          scrollDirection: Axis.vertical,
-                          child: Column(
-                            children: widget.controller.homeQuoteList!.map(
-                              (e) {
-                                return QuoteCardView(
-                                  e: e,
-                                );
-                              },
-                            ).toList(),
-                          ),
+                          itemCount: widget.controller.homeQuoteList!.length,
+                          itemBuilder: (context, index) {
+                            QuoteModel e =
+                                widget.controller.homeQuoteList![index];
+
+                            return QuoteCardView(
+                              e: e,
+                            );
+                          },
                         )
                       : Center(
                           child: Column(
