@@ -41,6 +41,9 @@ abstract class HomeControllerBase with Store {
   @observable
   int pageQuote = 1;
 
+  @observable
+  double? scrollOffset;
+
   Future<void> loadVideo() async {
     isLoading = true;
     allVideo ??= [];
