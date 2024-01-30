@@ -34,3 +34,5 @@ samples, guidance on mobile development, and a full API reference.
 ![Alt text](Screenshot_1706642718.png) ![Alt text](Screenshot_1706642703.png) ![Alt text](Screenshot_1706642708.png) ![Alt text](Screenshot_1706642713.png)
 
 # Iphone
+
+![Alt text](<Simulator Screenshot - iPhone 15 Pro Max - 2024-01-30 at 16.42.16.png>) ![Alt text](<Simulator Screenshot - iPhone 15 Pro Max - 2024-01-30 at 16.42.19.png>) ![Alt text](<Simulator Screenshot - iPhone 15 Pro Max - 2024-01-30 at 16.42.21.png>) ![Alt text](<Simulator Screenshot - iPhone 15 Pro Max - 2024-01-30 at 16.42.25.png>)
