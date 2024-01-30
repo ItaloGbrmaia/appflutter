@@ -30,6 +30,7 @@ class _HomeViewState extends State<HomeView> {
               color: Colors.white,
             ),
           ),
+          centerTitle: true,
           title: const Text(
             'INSPIRAÇÕES',
             style: TextStyle(
